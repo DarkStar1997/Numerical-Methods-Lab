@@ -6,7 +6,7 @@ double func(double x)
 }
 void main()
 {
-	printf("Enter the number of points (should be even):\n");
+	printf("Enter the number of points (should be odd):\n");
 	int n; scanf("%d", &n);
 	double x[n], y[n];
 /*	printf("Enter the points as pairs of (x, y)\n");*/
