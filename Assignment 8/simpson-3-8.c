@@ -6,7 +6,7 @@ int main()
     double x[n], y[n];
     printf("Enter the value of x and y :\n");
     for(int i=0;i<n;i++)
-        scanf("%lf%lf",x+i,y+i);
+        scanf("%lf %lf",x+i,y+i);
     double h=x[1]-x[0];
     double ans=(y[0]+y[n]);
     for(i=1;i<n;i++)
