@@ -3,8 +3,8 @@ int main()
 {
     int n;
     scanf("%d",&n);
-    double x[100];
-    double y[100];
+    double x[n];
+    double y[n];
     int i;
     printf("Enter the value of x and y :\n");
     for(i=0;i<=n;i++)
