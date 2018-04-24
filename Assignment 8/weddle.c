@@ -8,8 +8,8 @@ int main()
     for(int i=0;i<n;i++)
         scanf("%lf %lf",x+i,y+i);
     double h=x[1]-x[0];
-    double ans=(y[0]+y[n]);
-    for(i=1;i<n;i++)
+    double ans=(y[0]+y[n-1]);
+    for(int i=1;i<n;i++)
         if((i%6)==0)
             ans+=2*y[i];
         else if(i%6==3)
