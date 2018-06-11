@@ -49,6 +49,12 @@ struct Fract
         second=y;
         reduce();
     }
+    Fract(T x)
+    {
+        first=x;
+        second=1;
+        reduce();
+    }
     void reduce()
     {
         T a=rmg::gcd(rmg::abs(first), rmg::abs(second));
