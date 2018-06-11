@@ -174,6 +174,9 @@ Fract<T> rmg::process(const std::string &str)
 {
     auto pos=str.find('/', 0);
     bool flag=false;
+
+    //Processing fractional type strings (a/b)
+
     if(pos!=std::string::npos)
     {
         T num=0, denom=0;
@@ -194,6 +197,9 @@ Fract<T> rmg::process(const std::string &str)
         }
         return Fract<T>(flag?-num:num, denom);            
     }
+
+    //Processing strings in decimal form
+
     else if((pos=str.find('.',0))==std::string::npos)
     {
         T num=0, denom=1;
@@ -204,6 +210,9 @@ Fract<T> rmg::process(const std::string &str)
                 num=num*10+i-'0';
         return Fract<T>(flag?-num:num, denom);
     }
+
+    //processing strings in integeral form
+
     else
     {
         T num=0, denom=1;
