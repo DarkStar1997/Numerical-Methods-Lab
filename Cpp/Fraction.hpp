@@ -114,6 +114,10 @@ struct Fract
     {
         return (first*y.second)==(second*y.first);
     }
+    bool operator!=(Fract<T> &y)
+    {
+        return (first*y.second)!=(second*y.first);
+    }
     void abs()
     {
         first=rmg::abs(first);
