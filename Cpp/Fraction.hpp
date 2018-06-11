@@ -3,6 +3,9 @@
 #include <string>
 template<typename T>
 struct Fract;
+
+//custom functions inside the namespace
+
 namespace rmg
 {
     template<typename T>
@@ -34,6 +37,12 @@ namespace rmg
     template<typename T>
     Fract<T> process(const std::string&);
 }
+
+/*
+The main fraction datatype with a numerator and denominator. It can be of any integral type. It has been tested with GMP mpz_class
+and works flawlessly.
+*/
+
 template<typename T>
 struct Fract
 {
@@ -55,6 +64,9 @@ struct Fract
         second=1;
         reduce();
     }
+
+    //Reduces the Fraction to lowest terms
+
     void reduce()
     {
         T a=rmg::gcd(rmg::abs(first), rmg::abs(second));
@@ -68,6 +80,9 @@ struct Fract
             second=-second;
         }
     }
+
+    //Necessary arithmetic and logical operators
+    
     Fract<T> operator+(const Fract<T> &y)
     {
         T denom=rmg::lcm(rmg::abs(second), rmg::abs(y.second));
@@ -131,6 +146,9 @@ struct Fract
         reduce();
     }
 };
+
+//cout can be used directly
+
 template<typename T>
 std::ostream& operator<<(std::ostream &out, Fract<T> &x)
 {
@@ -146,6 +164,11 @@ std::ostream& operator<<(std::ostream &out, Fract<T> &x)
         out<<0;
     return out;
 }
+
+/*Converts a string to the equivalent Fract and reduces it to lowest terms. It processes
+strings of the form "a/b" where a and/or b can be negative but both are of integral types.
+It can also process decimals and integers.
+*/
 template<typename T>
 Fract<T> rmg::process(const std::string &str)
 {
