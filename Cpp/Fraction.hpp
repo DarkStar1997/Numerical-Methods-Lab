@@ -99,6 +99,12 @@ struct Fract
         ans.reduce();
         return ans;
     }
+    Fract<T> operator-()
+    {
+        Fract<T> ans=Fract<T>(-first, second);
+        ans.reduce();
+        return ans;
+    }
     Fract<T> operator*(const Fract<T> &y)
     {
         T num=first*y.first;
